@@ -7,8 +7,10 @@
 
 import { NewAppScreen } from '@react-native/new-app-screen';
 import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
+import TodoList from './srcd/components/TodoList';  
 import {
   SafeAreaProvider,
+  SafeAreaView,
   useSafeAreaInsets,
 } from 'react-native-safe-area-context';
 
@@ -18,7 +20,7 @@ function App() {
   return (
     <SafeAreaProvider>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <AppContent />
+     <SafeAreaView>   <TodoList /></SafeAreaView>
     </SafeAreaProvider>
   );
 }

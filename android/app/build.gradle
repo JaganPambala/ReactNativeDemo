@@ -73,6 +73,13 @@ def enableProguardInReleaseBuilds = false
 def jscFlavor = 'io.github.react-native-community:jsc-android:2026004.+'
 
 android {
+    packagingOptions {
+        pickFirst 'lib/**/libdittoffi.so'
+        pickFirst 'lib/**/libjsi.so'
+        pickFirst 'lib/**/libreact_nativemodule_core.so'
+        pickFirst 'lib/**/libturbomodulejsijni.so'
+        pickFirst 'lib/**/libreactnative.so'
+    }
     ndkVersion rootProject.ext.ndkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
